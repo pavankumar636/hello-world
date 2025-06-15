@@ -12,8 +12,17 @@ public class Greeter {
 
   }
 
-  //TODO: Add javadoc comment
+  /**
+   * Generate a greeting message for the supplied name.
+   *
+   * <p>If {@code someone} is {@code null} or empty, the string {@code "World"}
+   * will be used instead.</p>
+   *
+   * @param someone name of a person
+   * @return greeting message
+   */
   public String greet(String someone) {
-    return String.format("Hello, %s!", someone);
+    String name = (someone == null || someone.trim().isEmpty()) ? "World" : someone;
+    return String.format("Hello, %s!", name);
   }
 }
